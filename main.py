@@ -7,7 +7,7 @@ from matplotlib import pyplot as plt
 
 def union_frequency(arr):
     for i in range(len(arr) - 1, -1, -1):
-        if arr[i][2] and i == 0 <= 5:
+        if arr[i][2] <= 5 and i == 0:
             arr[1][1] = f"{arr[0][1].split(' / ')[0]:.2f} / {arr[1][1].split(' / ')[1]:.2f}"
             arr[1][2] = arr[0][2] + arr[1][2]
             arr[1][3] = arr[0][3] + arr[1][3]
@@ -27,11 +27,12 @@ def union_frequency(arr):
 
 exponential_lambda = 0.6  # Лямбда для Показательного закона
 significance_level = 0.05  # Уровень значимости
-numb_of_experiments = 100000  # Число экспериментов
+numb_of_experiments = 1000  # Число экспериментов
 
 
-expon_array = sorted(list(stats.expon.rvs(scale=40, size=numb_of_experiments)))
-print("Готовая выборка: ", expon_array)
+# Сгенерированная выборка по уже готовому методу из модуля scipy
+#expon_array = sorted(list(stats.expon.rvs(scale=40, size=numb_of_experiments)))
+#print("Готовая выборка: ", expon_array)
 
 
 array = []
